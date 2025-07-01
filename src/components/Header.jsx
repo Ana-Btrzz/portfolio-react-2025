@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { BsPcDisplay, File, Menu, X } from "lucide-react";
+import { File, Menu, X } from "lucide-react";
+import { BsPcDisplay } from "react-icons/bs";
 
 const navList = [
-  { href: "#home", label: "Home" },
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About" },
-  { href: "#tips", label: "Tips" },
-  { href: "#book", label: "Book" },
-  { href: "#test", label: "Test" },
+  { href: "#home", label: "Sobre Mim" },
+  { href: "#training", label: "Formação" },
+  { href: "#projects", label: "Projetos" },
+  { href: "#contacts", label: "Contato" },
 ];
 
 const Header = () => {
@@ -20,7 +19,7 @@ const Header = () => {
           <span className="text-xl font-bold text-purple-600">Ana Beatriz</span>
         </div>
 
-        <nav className="hidden md:flex space-x-6 text-gray-700 font-medium">
+        <nav className="hidden md:flex space-x-6 text-violet-700 font-medium">
           {navList.map((link) => (
             <a
               href={link.href}
@@ -38,7 +37,7 @@ const Header = () => {
             href="#"
             className="bg-purple-600 text-white px-4 py-2 rounded-xl hover:bg-purple-700 transition text-sm"
           >
-            Book
+            Currículo
           </a>
         </div>
 
@@ -48,16 +47,16 @@ const Header = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <X className="text-gray-700" />
+              <X className="text-violet-700" />
             ) : (
-              <Menu className="text-gray-700" />
+              <Menu className="text-violet-700" />
             )}
           </button>
         </div>
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 shadow-md px-4 py-4 space-y-3 text-gray-700 font-medium">
+        <div className="md:hidden bg-white border-t border-violet-200 shadow-md px-4 py-4 space-y-3 text-violet-700 font-medium">
           {navList.map((link) => (
             <a
               href={link.href}
