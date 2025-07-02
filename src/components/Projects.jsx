@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import "/src/assets/project-animais-fantasticos.png";
+import "/src/assets/project-portifolio.png";
+import "/src/assets/project-bikcraft.png";
+import "/src/assets/project-cordel-moderno.png";
 
 const Projects = () => {
   const [activeTip, setActiveTip] = useState(0);
@@ -27,7 +31,7 @@ const Projects = () => {
       img: (
         <img
           className="max-h-50 rounded-[100%]"
-          src="./src/assets/project-portifolio.png"
+          src="/src/assets/project-portifolio.png"
           alt="Meu Primeiro Portfólio"
         />
       ),
@@ -64,7 +68,7 @@ const Projects = () => {
       img: (
         <img
           className="max-h-50 rounded-[100%]"
-          src="./src/assets/project-bikcraft.png"
+          src="/src/assets/project-bikcraft.png"
           alt="Bikcraft"
         />
       ),
@@ -93,7 +97,7 @@ const Projects = () => {
       img: (
         <img
           className="max-h-50 rounded-[100%]"
-          src="./src/assets/project-animais-fantasticos.png"
+          src="/src/assets/project-animais-fantasticos.png"
           alt="Animais Fantásticos"
         />
       ),
