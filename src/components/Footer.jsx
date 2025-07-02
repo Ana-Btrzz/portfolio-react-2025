@@ -124,9 +124,6 @@ const Footer = () => {
               &copy; {new Date().getFullYear()} Ana B. Todos os direitos
               reservados.
             </p>
-            <div className="flex space-x-6">
-              <a href="#"></a>
-            </div>
           </div>
         </div>
       </div>

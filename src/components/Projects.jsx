@@ -27,7 +27,7 @@ const Projects = () => {
       img: (
         <img
           className="max-h-50 rounded-[100%]"
-          src="/src/assets/project-portifolio.png"
+          src="./src/assets/project-portifolio.png"
           alt="Meu Primeiro Portfólio"
         />
       ),
@@ -37,7 +37,7 @@ const Projects = () => {
       btn2: (
         <a
           className="inline-flex items-center bg-purple-600 text-white px-3 py-3 py-1 sm:px-6 sm:py-3 rounded-xl hover:bg-purple-700 text-base font-medium mr-3"
-          href="/src/assets/bikcraft-doc.pdf"
+          href="./src/assets/bikcraft-doc.pdf"
           target="_blank"
         >
           UI/UX
@@ -64,7 +64,7 @@ const Projects = () => {
       img: (
         <img
           className="max-h-50 rounded-[100%]"
-          src="/src/assets/project-bikcraft.png"
+          src="./src/assets/project-bikcraft.png"
           alt="Bikcraft"
         />
       ),
@@ -93,7 +93,7 @@ const Projects = () => {
       img: (
         <img
           className="max-h-50 rounded-[100%]"
-          src="/src/assets/project-animais-fantasticos.png"
+          src="./src/assets/project-animais-fantasticos.png"
           alt="Animais Fantásticos"
         />
       ),

@@ -34,7 +34,8 @@ const Header = () => {
         <div className="hidden md:flex items-center space-x-2">
           <File className="text-purple-600" />
           <a
-            href="#"
+            href="/src/assets/my-resume.pdf"
+            target="_blank"
             className="bg-purple-600 text-white px-4 py-2 rounded-xl hover:bg-purple-700 transition text-sm"
           >
             Currículo

@@ -25,7 +25,7 @@ const Main = () => {
         </div>
         <div className="flex justify-center">
           <img
-            src="/src/assets/profile.jpeg"
+            src="./src/assets/profile.jpeg"
             alt="profile"
             className="w-80 lg:w-[429px] rounded-[100%]
             "
