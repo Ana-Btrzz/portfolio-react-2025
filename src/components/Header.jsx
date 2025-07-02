@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { File, Menu, X } from "lucide-react";
 import { BsPcDisplay } from "react-icons/bs";
-import "src/assets/my-resume.pdf";
 
 const navList = [
   { href: "#home", label: "Sobre Mim" },

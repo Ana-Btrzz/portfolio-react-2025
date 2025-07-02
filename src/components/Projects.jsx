@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-import "/src/assets/project-animais-fantasticos.png";
-import "/src/assets/project-portifolio.png";
-import "/src/assets/project-bikcraft.png";
-import "/src/assets/project-cordel-moderno.png";
 
 const Projects = () => {
   const [activeTip, setActiveTip] = useState(0);
