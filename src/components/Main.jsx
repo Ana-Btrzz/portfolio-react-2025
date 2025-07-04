@@ -1,6 +1,8 @@
 import React from "react";
 import { File } from "lucide-react";
-/* import profile from "/src/img/profile.jpeg"; */
+import profile from "/src/img/profile.jpeg";
+
+const image = profile;
 
 const Main = () => {
   return (
@@ -25,7 +27,7 @@ const Main = () => {
         </div>
         <div className="flex justify-center">
           <img
-            src="/src/assets/profile.jpeg"
+            src={image.profile}
             alt="profile"
             className="w-80 lg:w-[429px] rounded-[100%]
             "
