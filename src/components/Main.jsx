@@ -1,6 +1,7 @@
 import React from "react";
 import { File } from "lucide-react";
 import Profile from "../assets/profile.jpeg";
+import Curriculum from "../assets/my-resume.pdf";
 
 const Main = () => {
   return (
@@ -16,7 +17,7 @@ const Main = () => {
             perspiciatis!
           </p>
           <a
-            href="#"
+            href={Curriculum}
             className="inline-flex items-center bg-purple-600 text-white px-3 py-3 py-1 sm:px-6 sm:py-3 rounded-xl hover:bg-purple-700 text-base font-medium"
           >
             <File className="w-5 h-5 mr-2" />

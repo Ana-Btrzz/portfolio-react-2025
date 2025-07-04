@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { File, Menu, X } from "lucide-react";
 import { BsPcDisplay } from "react-icons/bs";
+import Curriculum from "../assets/my-resume.pdf";
 
 const navList = [
   { href: "#home", label: "Sobre Mim" },
@@ -34,7 +35,7 @@ const Header = () => {
         <div className="hidden md:flex items-center space-x-2">
           <File className="text-purple-600" />
           <a
-            href="src/assets/my-resume.pdf"
+            href={Curriculum}
             target="_blank"
             className="bg-purple-600 text-white px-4 py-2 rounded-xl hover:bg-purple-700 transition text-sm"
           >
