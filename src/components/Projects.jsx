@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Portfolio from "../assets/project-portifolio.png";
 import Bik from "../assets/project-bikcraft.png";
 import Animals from "../assets/project-animais-fantasticos.png";
-import Cordel from "/";
+import Cordel from "../assets/project-cordel-moderno.png";
 
 const Projects = () => {
   const [activeTip, setActiveTip] = useState(0);
