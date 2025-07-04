@@ -1,6 +1,6 @@
 import React from "react";
 import { File } from "lucide-react";
-import Profile from "/src/img/profile.jpeg";
+import Profile from "../assets/profile.jpeg";
 
 const Main = () => {
   return (
