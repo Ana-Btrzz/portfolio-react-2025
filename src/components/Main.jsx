@@ -27,8 +27,7 @@ const Main = () => {
           <img
             src={Profile}
             alt="profile"
-            className="w-80 lg:w-[429px] rounded-[100%]
-            "
+            className="w-80 lg:w-[429px] rounded-[100%]"
           />
         </div>
       </div>
