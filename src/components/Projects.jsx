@@ -2,14 +2,7 @@ import React, { useState } from "react";
 import Portfolio from "../assets/project-portifolio.png";
 import Bik from "../assets/project-bikcraft.png";
 import Animals from "../assets/project-animais-fantasticos.png";
-import Cordel from "../assets/project-cordel-moderno.png";
-
-const images = {
-  portfolio: Portfolio,
-  bik: Bik,
-  animals: Animals,
-  cordel: Cordel,
-};
+import Cordel from "/";
 
 const Projects = () => {
   const [activeTip, setActiveTip] = useState(0);
@@ -38,7 +31,7 @@ const Projects = () => {
       img: (
         <img
           className="max-h-50 rounded-[100%]"
-          src={images.portfolio}
+          src={Portfolio}
           alt="Meu Primeiro Portfólio"
         />
       ),
@@ -72,13 +65,7 @@ const Projects = () => {
           arquivos, garantindo estrutura e legibilidade.
         </a>
       ),
-      img: (
-        <img
-          className="max-h-50 rounded-[100%]"
-          src={images.bik}
-          alt="Bikcraft"
-        />
-      ),
+      img: <img className="max-h-50 rounded-[100%]" src={Bik} alt="Bikcraft" />,
     },
     {
       title: "Animais Fantásticos",
@@ -104,7 +91,7 @@ const Projects = () => {
       img: (
         <img
           className="max-h-50 rounded-[100%]"
-          src={images.animals}
+          src={Animals}
           alt="Animais Fantásticos"
         />
       ),
@@ -132,7 +119,7 @@ const Projects = () => {
       img: (
         <img
           className="max-h-50 rounded-[100%]"
-          src={images.cordel}
+          src={Cordel}
           alt="Cordel Moderno"
         />
       ),
