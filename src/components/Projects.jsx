@@ -1,4 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+
 import Portfolio from "../assets/project-portifolio.png";
 import Bik from "../assets/project-bikcraft.png";
 import Animals from "../assets/project-animais-fantasticos.png";
@@ -6,31 +11,30 @@ import Cordel from "../assets/project-cordel-moderno.png";
 
 const Projects = () => {
   const [activeTip, setActiveTip] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const contentRef = useRef(null);
 
   const projects = [
     {
       title: "Meu Primeiro Portfólio",
       btn1: (
         <a
-          className="inline-flex items-center bg-purple-600 text-white px-3 py-3 py-1 sm:px-6 sm:py-3 rounded-xl hover:bg-purple-700 text-base font-medium"
-          href="#"
+          className="inline-flex items-center bg-purple-600 text-white px-3 py-1 sm:px-6 sm:py-3 rounded-xl hover:bg-purple-700 text-base font-medium"
+          href="https://portfolio-six-flame-59.vercel.app"
           target="_blank"
         >
           Visitar
         </a>
       ),
       content: (
-        <a href="https://portfolio-six-flame-59.vercel.app" target="_blank">
-          Nesse projeto, desenvolvi uma loja de bicicletas completa, abrangendo
-          desde a página de produtos até a seção de termos e condições. Apliquei
-          conhecimentos variados, planejando e criando as interfaces com base
-          nos princípios de UX, e dediquei atenção à organização do código e dos
-          arquivos, garantindo estrutura e legibilidade.
-        </a>
+        <>
+          Nesse projeto, desenvolvi um portfólio pessoal aplicando princípios de
+          UX e design responsivo.
+        </>
       ),
       img: (
         <img
-          className="max-h-50 rounded-[100%]"
+          className="max-h-50 rounded-full"
           src={Portfolio}
           alt="Meu Primeiro Portfólio"
         />
@@ -38,18 +42,9 @@ const Projects = () => {
     },
     {
       title: "Bikcraft",
-      btn2: (
-        <a
-          className="inline-flex items-center bg-purple-600 text-white px-3 py-3 py-1 sm:px-6 sm:py-3 rounded-xl hover:bg-purple-700 text-base font-medium mr-3"
-          href="./src/assets/bikcraft-doc.pdf"
-          target="_blank"
-        >
-          UI/UX
-        </a>
-      ),
       btn1: (
         <a
-          className="inline-flex items-center bg-purple-600 text-white px-3 py-3 py-1 sm:px-6 sm:py-3 rounded-xl hover:bg-purple-700 text-base font-medium"
+          className="inline-flex items-center bg-purple-600 text-white px-3 py-1 sm:px-6 sm:py-3 rounded-xl hover:bg-purple-700 text-base font-medium"
           href="https://bikcraft-one-beta.vercel.app"
           target="_blank"
         >
@@ -57,21 +52,18 @@ const Projects = () => {
         </a>
       ),
       content: (
-        <a href="https://bikcraft-one-beta.vercel.app" target="_blank">
-          Nesse projeto, desenvolvi uma loja de bicicletas completa, abrangendo
-          desde a página de produtos até a seção de termos e condições. Apliquei
-          conhecimentos variados, planejando e criando as interfaces com base
-          nos princípios de UX, e dediquei atenção à organização do código e dos
-          arquivos, garantindo estrutura e legibilidade.
-        </a>
+        <>
+          Loja de bicicletas completa, do catálogo à página de termos, com foco
+          em UX/UI e estrutura de código.
+        </>
       ),
-      img: <img className="max-h-50 rounded-[100%]" src={Bik} alt="Bikcraft" />,
+      img: <img className="max-h-50 rounded-full" src={Bik} alt="Bikcraft" />,
     },
     {
       title: "Animais Fantásticos",
       btn1: (
         <a
-          className="inline-flex items-center bg-purple-600 text-white px-3 py-3 py-1 sm:px-6 sm:py-3 rounded-xl hover:bg-purple-700 text-base font-medium"
+          className="inline-flex items-center bg-purple-600 text-white px-3 py-1 sm:px-6 sm:py-3 rounded-xl hover:bg-purple-700 text-base font-medium"
           href="https://ana-btrzz.github.io/animais-fantasticos/"
           target="_blank"
         >
@@ -79,18 +71,14 @@ const Projects = () => {
         </a>
       ),
       content: (
-        <a
-          href="https://ana-btrzz.github.io/animais-fantasticos/"
-          target="_blank"
-        >
-          Nesse projeto, pratiquei diversas formas de utilização do JavaScript,
-          incluindo interações dinâmicas com imagens, scroll suave da página e
-          animações para exibição de informações.
-        </a>
+        <>
+          Projeto JavaScript com interações dinâmicas, scroll suave e animações
+          para exibir informações.
+        </>
       ),
       img: (
         <img
-          className="max-h-50 rounded-[100%]"
+          className="max-h-50 rounded-full"
           src={Animals}
           alt="Animais Fantásticos"
         />
@@ -100,7 +88,7 @@ const Projects = () => {
       title: "Cordel Moderno",
       btn1: (
         <a
-          className="inline-flex items-center bg-purple-600 text-white px-3 py-3 py-1 sm:px-6 sm:py-3 rounded-xl hover:bg-purple-700 text-base font-medium"
+          className="inline-flex items-center bg-purple-600 text-white px-3 py-1 sm:px-6 sm:py-3 rounded-xl hover:bg-purple-700 text-base font-medium"
           href="https://ana-btrzz.github.io/projeto-cordel/"
           target="_blank"
         >
@@ -108,23 +96,37 @@ const Projects = () => {
         </a>
       ),
       content: (
-        <a href="https://ana-btrzz.github.io/projeto-cordel/" target="_blank">
-          Nesse projeto, pratiquei técnicas para lidar com imagens, ajustando
-          seu comportamento de acordo com o tamanho da tela. Além disso,
-          explorei o efeito parallax no fundo, onde a imagem permanece fixa
-          enquanto a página é rolada, criando uma experiência visual mais
-          imersiva.
-        </a>
+        <>
+          Página responsiva com efeito parallax e manipulação de imagens para
+          diferentes tamanhos de tela.
+        </>
       ),
       img: (
         <img
-          className="max-h-50 rounded-[100%]"
+          className="max-h-50 rounded-full"
           src={Cordel}
           alt="Cordel Moderno"
         />
       ),
     },
   ];
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const handleProjectClick = (index) => {
+    setActiveTip(index);
+    setTimeout(() => {
+      contentRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100);
+  };
 
   return (
     <section
@@ -143,11 +145,11 @@ const Projects = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-1 md:grid md:grid-cols-4 gap-4 mb-8 hidden">
         {projects.map((tip, index) => (
           <button
             key={index}
-            onClick={() => setActiveTip(index)}
+            onClick={() => handleProjectClick(index)}
             className={`p-4 rounded-xl transition duration-200 flex flex-col items-center ${
               activeTip === index
                 ? "bg-white shadow-lg border-b-4 border-purple-400"
@@ -162,44 +164,53 @@ const Projects = () => {
         ))}
       </div>
 
-      <div className="bg-gradient-to-r from-purple-50 to-violet-100 rounded-2xl p-8 shadow-sm">
-        <div className="flex flex-col md:flex-row items-center gap-6">
-          <div className=" flex-shrink-0 bg-white p-4 rounded-[100%] shadow-md">
-            {projects[activeTip].img}
-          </div>
-          <div>
-            <h3 className="text-2xl font-bold text-violet-800 mb-3">
-              {projects[activeTip].title}
-            </h3>
-            <p className="text-violet-600 text-lg leading-relaxed">
-              {projects[activeTip].content}
-            </p>
-
-            <div className="mt-4 flex gap-5">
-              {projects[activeTip].btn1}
-              {projects[activeTip].title === "Bikcraft" &&
-                projects[activeTip].btn2}
+      {isMobile ? (
+        <Swiper
+          spaceBetween={20}
+          pagination={{ clickable: true }}
+          modules={[Pagination]}
+          className="mySwiper"
+        >
+          {projects.map((proj, i) => (
+            <SwiperSlide key={i}>
+              <div className="bg-gradient-to-r from-purple-50 to-violet-100 rounded-2xl p-8 shadow-sm">
+                <div className="flex flex-col items-center gap-6">
+                  <div className="bg-white p-4 rounded-full shadow-md">
+                    {proj.img}
+                  </div>
+                  <h3 className="text-2xl font-bold text-violet-800 mb-3">
+                    {proj.title}
+                  </h3>
+                  <p className="text-violet-600 text-lg leading-relaxed">
+                    {proj.content}
+                  </p>
+                  <div className="mt-4 flex gap-5">{proj.btn1}</div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        <div
+          ref={contentRef}
+          className="bg-gradient-to-r from-purple-50 to-violet-100 rounded-2xl p-8 shadow-sm"
+        >
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <div className="flex-shrink-0 bg-white p-4 rounded-full shadow-md">
+              {projects[activeTip].img}
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-violet-800 mb-3">
+                {projects[activeTip].title}
+              </h3>
+              <p className="text-violet-600 text-lg leading-relaxed">
+                {projects[activeTip].content}
+              </p>
+              <div className="mt-4 flex gap-5">{projects[activeTip].btn1}</div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="mt-8 flex justify-center">
-        <div className="flex space-x-2">
-          {projects.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveTip(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                activeTip === index
-                  ? "bg-purple-500 scale-125"
-                  : "bg-violet-300"
-              }`}
-              aria-label={`Ir para o projeto ${index + 1}`}
-            ></button>
-          ))}
-        </div>
-      </div>
+      )}
     </section>
   );
 };
