@@ -12,9 +12,10 @@ const Main = () => {
             Desenvolvedora Front-End e UX/UI Designer.
           </h1>
           <p className="text-violet-700 text-sm lg:text-lg">
-            Sobre Mim Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Cum vel obcaecati accusamus provident deleniti numquam beatae quis
-            perspiciatis!
+            Me chamo Ana Beatriz e estou cursando Análise e Desenvolvimento de
+            Sistemas. Sou paixonada por design de interfaces e desenvolvimento
+            de softwere. Gosto de transformar ideias em interfaces claras, atrativas e
+            funcionais.
           </p>
           <a
             href={Curriculum}
