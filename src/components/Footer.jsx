@@ -1,10 +1,12 @@
-import { a, footer, link, ul } from "framer-motion/client";
 import React from "react";
 import { FaWhatsapp, FaLinkedin, FaGithub, FaPhone } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 
 const socialLinks = [
-  { icon: <FaWhatsapp className="text-xl" />, href: "tel:+5511933632395" },
+  {
+    icon: <FaWhatsapp className="text-xl" />,
+    href: "tel:+5511933632395",
+  },
   {
     icon: <MdOutlineEmail className="text-xl" />,
     href: "mailto:anabeatriz.arruda7@gmail.com",
@@ -21,49 +23,52 @@ const socialLinks = [
 
 const contactInfo = [
   {
-    icon: <FaPhone className="mr-4 text-white/70 m-1" />,
+    icon: <FaPhone className="mr-4 text-red-500 mt-1" />,
     text: (
       <a
         href="tel:+5511933632395"
-        className="hover:text-purple-300 transitions-colors"
+        className="hover:text-red-400 transition-colors"
       >
         +55 11 93363-2395
       </a>
     ),
   },
   {
-    icon: <MdOutlineEmail className="mr-4 text-white/70 m-1" />,
+    icon: <MdOutlineEmail className="mr-4 text-red-500 mt-1" />,
     text: (
       <a
         target="_blank"
+        rel="noreferrer"
         href="mailto:anabeatriz.arruda7@gmail.com"
-        className="hover:text-purple-300 transitions-colors"
+        className="hover:text-red-400 transition-colors"
       >
         anabeatriz.arruda7@gmail.com
       </a>
     ),
   },
   {
-    icon: <FaLinkedin className="mr-4 text-white/70 m-1" />,
+    icon: <FaLinkedin className="mr-4 text-red-500 mt-1" />,
     text: (
       <a
         target="_blank"
+        rel="noreferrer"
         href="https://www.linkedin.com/in/ana-beatriz-baa39875/"
-        className="hover:text-purple-300 transitions-colors"
+        className="hover:text-red-400 transition-colors"
       >
-        Ana
+        LinkedIn
       </a>
     ),
   },
   {
-    icon: <FaGithub className="mr-4 text-white/70 m-1" />,
+    icon: <FaGithub className="mr-4 text-red-500 mt-1" />,
     text: (
       <a
         target="_blank"
+        rel="noreferrer"
         href="https://github.com/Ana-Btrzz"
-        className="hover:text-purple-300 transitions-colors"
+        className="hover:text-red-400 transition-colors"
       >
-        fjsfhsudhf.com
+        github.com/Ana-Btrzz
       </a>
     ),
   },
@@ -73,58 +78,78 @@ const Footer = () => {
   return (
     <footer
       id="contacts"
-      className="bg-gradient-to-b from-violet-950 to-violet-950 text-white pt-16 pb-12 pr-5 pl-5 relative overflow-hidden md:m-auto"
+      className="bg-black border-t border-red-950 text-white pt-20 pb-10 px-5"
     >
-      <div className="container mx-auto px-6 relative z-10 flex items-stretch  justify-center relative flex-wrap md:justify-between">
-        <div className="flex flex-col mb-6 justify-center">
-          {/* araeftsegt */}
-          <div className="flex items-center mb-6">
-            <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-violet-200">
-              Contatos
+      <div className="container mx-auto max-w-6xl">
+        <div className="flex flex-col lg:flex-row justify-between gap-10">
+          <div>
+            <h2 className="text-4xl font-bold text-white mb-3">
+              Contato
             </h2>
-          </div>
-          <div className="flex space-x-6 mb-8 ">
-            {socialLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all duration-300 hover:-translate-y-1"
-              >
-                {link.icon}{" "}
-              </a>
-            ))}
-          </div>
-        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-1 gap-5 mb-8 ">
-          <div className="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-purple-300 transition-colors w-max mb-8 ">
-            {contactInfo.map((item, index) => (
-              <ul className="space-y-4">
-                <li key={index} className="flex items-start mt-1">
-                  {item.icon}
-                  {item.text}
-                </li>
-              </ul>
-            ))}
-            <div
-              className="flex justify-end mt-8"
-              /* style={{ fontFamily: "Source Code Pro" }} */
-            >
-              <p>Barueri - São Paulo</p>
+            <div className="w-20 h-1 bg-red-600 rounded-full mb-8"></div>
+
+            <div className="flex gap-4">
+              {socialLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="
+                    bg-zinc-900
+                    border border-red-950
+                    text-red-500
+                    p-4
+                    rounded-full
+                    transition-all
+                    duration-300
+                    hover:bg-red-600
+                    hover:text-white
+                    hover:border-red-500
+                    hover:-translate-y-1
+                    hover:shadow-[0_0_20px_rgba(239,68,68,0.35)]
+                  "
+                >
+                  {link.icon}
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* <div className="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-purple-300 transition-colors">
-            <h3 className="text-xl font-semibold mb-5">Ana B.</h3>
-            <p className="">Me mande um email</p>
-          </div> */}
+          <div
+            className="
+              bg-zinc-900
+              border border-red-950
+              rounded-2xl
+              p-8
+              w-full
+              lg:max-w-lg
+              hover:border-red-700
+              transition-all
+            "
+          >
+            <ul className="space-y-5 text-zinc-300">
+              {contactInfo.map((item, index) => (
+                <li key={index} className="flex items-start">
+                  {item.icon}
+                  {item.text}
+                </li>
+              ))}
+            </ul>
 
-          <div className="pt-8 flex-col md:flex-row justify-items-center absolute bottom-0 right-0">
-            <p className="text-white/50 text-sm mb-3 md:mb-0">
-              &copy; {new Date().getFullYear()} Ana B. Todos os direitos
-              reservados.
-            </p>
+            <div className="mt-8 pt-6 border-t border-zinc-800 text-right">
+              <p className="text-zinc-500">
+                Barueri - São Paulo
+              </p>
+            </div>
           </div>
+        </div>
+
+        <div className="border-t border-zinc-900 mt-12 pt-8 text-center">
+          <p className="text-zinc-500 text-sm">
+            © {new Date().getFullYear()} Ana Beatriz. Todos os direitos reservados.
+          </p>
         </div>
       </div>
     </footer>

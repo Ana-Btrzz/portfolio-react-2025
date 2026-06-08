@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { File, Menu, X } from "lucide-react";
-import { BsPcDisplay } from "react-icons/bs";
+import { Menu, X } from "lucide-react";
 import Curriculum from "../assets/my-resume.pdf";
 
 const navList = [
@@ -12,32 +11,49 @@ const navList = [
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  return (
-    <header className="scroll-mt-20 bg-white shadow-md sticky top-0 z-50">
-      <div className="container mx-auto flex items-center justify-between  py-4 px-4 lg:px-8 ">
-        <div className="flex items-center space-x-2">
-          <BsPcDisplay className="w-8 h-8 text-purple-600" />
-          <span className="text-xl font-bold text-purple-600">Ana Beatriz</span>
-        </div>
 
-        <nav className="hidden md:flex space-x-6 text-violet-700 font-medium">
+  const handleScroll = (e, target) => {
+    e.preventDefault();
+
+    document.querySelector(target)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    setIsMenuOpen(false);
+  };
+
+  return (
+    <header className="sticky top-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
+      <div className="container mx-auto flex items-center justify-end py-4 px-4 lg:px-8">
+
+        <nav className="hidden md:flex space-x-8 text-zinc-300 font-medium">
           {navList.map((link) => (
             <a
-              href={link.href}
               key={link.href}
-              className="hover:text-purple-600 transition"
+              href={link.href}
+              onClick={(e) => handleScroll(e, link.href)}
+              className="transition duration-300 hover:text-red-400"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center space-x-2">
-          <File className="text-purple-600" />
+        <div className="hidden md:flex items-center ml-8">
           <a
             href={Curriculum}
             target="_blank"
-            className="bg-purple-600 text-white px-4 py-2 rounded-xl hover:bg-purple-700 transition text-sm"
+            rel="noreferrer"
+            className="
+              px-4 py-2 rounded-xl
+              bg-red-500/10
+              text-red-400
+              border border-red-500/20
+              hover:bg-red-500/20
+              hover:border-red-500/40
+              transition-all duration-300
+            "
           >
             Currículo
           </a>
@@ -45,30 +61,53 @@ const Header = () => {
 
         <div className="md:hidden">
           <button
-            className="cursor-pointer"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="cursor-pointer"
           >
             {isMenuOpen ? (
-              <X className="text-violet-700" />
+              <X className="text-red-400" size={28} />
             ) : (
-              <Menu className="text-violet-700" />
+              <Menu className="text-red-400" size={28} />
             )}
           </button>
         </div>
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-violet-200 shadow-md px-4 py-4 space-y-3 text-violet-700 font-medium">
+        <div className="md:hidden bg-zinc-950 border-t border-zinc-800 px-4 py-4 space-y-4">
           {navList.map((link) => (
             <a
-              href={link.href}
               key={link.href}
-              className="block hover:text-purple-600 transition"
+              href={link.href}
               onClick={() => setIsMenuOpen(false)}
+              className="
+                block
+                text-zinc-300
+                font-medium
+                transition
+                hover:text-red-400
+              "
             >
               {link.label}
             </a>
           ))}
+
+          <a
+            href={Curriculum}
+            target="_blank"
+            rel="noreferrer"
+            className="
+              block text-center
+              mt-4
+              px-4 py-2
+              rounded-xl
+              bg-red-500/10
+              text-red-400
+              border border-red-500/20
+            "
+          >
+            Currículo
+          </a>
         </div>
       )}
     </header>
