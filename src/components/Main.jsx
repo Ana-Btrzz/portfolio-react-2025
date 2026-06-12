@@ -9,7 +9,7 @@ const Main = () => {
       id="home"
       className="scroll-mt-20 bg-black py-20"
     >
-      <div className="container mx-auto px-6 lg:px-20 flex flex-col-reverse lg:flex-row items-center justify-between gap-16">
+      <div className="container mx-auto px-6 lg:px-20 flex flex-col-reverse lg:flex-row items-center justify-between gap-10">
 
         <div className="max-w-xl text-center lg:text-left space-y-6">
           <h1
